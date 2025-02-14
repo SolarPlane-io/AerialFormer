@@ -24,7 +24,7 @@ if __name__ == '__main__':
         author='AICV Lab, University of Arkansas',
         keywords='computer vision, semantic segmentation',
         # url='http://github.com/open-mmlab/mmsegmentation',
-        packages=find_packages(exclude=('configs', 'tools', 'demo')),
+        packages=find_packages(exclude=('assets', 'configs', 'tools')),
         include_package_data=True,
         license='Apache License 2.0',
         install_requires=[
