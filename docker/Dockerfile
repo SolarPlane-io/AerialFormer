@@ -31,10 +31,12 @@ ENV FORCE_CUDA="1"
 RUN pip install mmsegmentation==0.30.0
 
 # # Install AerialFormer
-# RUN git clone https://github.com/UARK-AICV/AerialFormer.git /AerialFormer
-# WORKDIR /AerialFormer
-# RUN pip install --no-cache-dir -e .
+RUN git clone https://github.com/SolarPlane-io/AerialFormer.git /AerialFormer
+WORKDIR /AerialFormer
+RUN pip install --no-cache-dir -e .
 
-COPY docker/entrypoint.sh /entrypoint.sh
-RUN chmod +x /entrypoint.sh
-ENTRYPOINT [ "/entrypoint.sh" ]
+#COPY entrypoint.sh /entrypoint.sh
+#RUN chmod +x /entrypoint.sh
+#ENTRYPOINT [ "/entrypoint.sh" ]
+
+CMD ["bash"]
