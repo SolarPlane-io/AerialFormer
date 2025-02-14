@@ -106,7 +106,6 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-data
 .vscode
 .idea
 
@@ -116,8 +115,16 @@ data
 *.log.json
 work_dirs
 *.zip
+*.rar
 mmseg/.mim
 
 # Pytorch
 *.pth
 *.pt
+
+# data dirs
+data
+raw_data
+
+# training checkpoints
+checkpoints
