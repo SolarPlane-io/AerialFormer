@@ -13,7 +13,7 @@ ENV CMAKE_PREFIX_PATH="$(dirname $(which conda))/../"
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/3bf863cc.pub
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/7fa2af80.pub
 
-RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 git vim \
+RUN apt-get update && apt-get install -y libgl1 libglib2.0-0 git vim unrar \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
@@ -29,6 +29,12 @@ RUN python -c 'import mmcv;print(mmcv.__version__)'
 # Install MMSegmentation as a package
 ENV FORCE_CUDA="1"
 RUN pip install mmsegmentation==0.30.0
+
+# For generating the RGD rasters from RGB + DSM
+RUN pip install opencv-python
+
+# For unpacking the Potsdam 1_DSM.rar file
+RUN pip install rarfile
 
 # # Install AerialFormer
 RUN git clone https://github.com/SolarPlane-io/AerialFormer.git /AerialFormer

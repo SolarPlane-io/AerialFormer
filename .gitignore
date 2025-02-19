@@ -128,3 +128,6 @@ raw_data
 
 # training checkpoints
 checkpoints
+
+# SolarPlane-specific build script
+/docker/build.sh

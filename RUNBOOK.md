@@ -33,6 +33,10 @@ Copy the password to the clipboard. In the remote terminal login to the ECR repo
 
 `docker login --username AWS --password PASTED_PASSWORD 654654581134.dkr.ecr.us-west-2.amazonaws.com`
 
+Then enter:
+
+`newgrp docker`
+
 Then pull the latest image using the most recent tag in place of "v1.0.1" as needed:
 
 `docker pull 654654581134.dkr.ecr.us-west-2.amazonaws.com/aerialformer-image:v1.0.1`

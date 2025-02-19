@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # For setting up a virtual environment
 # This assumes that Conda or Miniconda has been installed
-conda create --name openmmlab python=3.8 -y
-conda activate openmmlab
+# And a virtual environment created and activated
 
 # install pytorch
 conda install pytorch==1.12.1 torchvision==0.13.1 torchaudio==0.12.1 cudatoolkit=11.3 -c pytorch
+
+# for unpacking the Potsdam 1_DSM.rar file
+conda install conda-forge::rarfile
 
 #export CUDA_HOME=???  Do we need this?
 
